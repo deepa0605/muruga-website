@@ -1,0 +1,813 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*,
+*::before,
+*::after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+   box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+:root{
+
+    --bg-white: #fff;
+
+    --primary-text: black;
+    --secondary-color: orange;
+    --light-color: #e2f6de;
+    --dark-color: #03262c;
+    --text-white: #fff;
+    --text-gray: #dee2ef;
+    --anchor-color: #007aff;
+    --main-color: orange;
+
+    --primary-font: 'Barlow Condensed', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+}
+
+body,
+html{
+    color: var(--primary-text);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 7rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+h2 {
+    color: var(--primary-text);
+    font-size: 4.7rem;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: var(--primary-text);
+    font-size: 3.1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--primary-text);
+}
+
+h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary-text);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+}
+
+embed,
+iframe,
+img,
+object {
+    max-width: 100%;
+}
+
+span{
+    color: var(--main-color);
+}
+
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a,
+a:active,
+a:focus,
+a:hover,
+button{
+    text-decoration: none;
+    outline: 0;
+}
+
+li a {
+color: var(--text-white);
+}
+
+a:hover,
+button:hover {
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+.main-btn{
+    position: relative;
+    color: var(--bg-white);
+    background: linear-gradient(to right #0f7404, #5cb917);
+    z-index: 1;
+    overflow: hidden;
+    border: 0.2rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.main-btn:hover{
+    background: var(--bg-white);
+    color: var(--secondary-color);
+    border: 0.2rem soid var(--secondary-color);
+}
+
+section{
+    padding: 5rem 0;
+}
+
+.section-title{
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+    max-width: 40%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+}
+
+.About .banner_section,
+.Gurus .banner_section,
+.Devi .banner_section,
+.Awards .banner_section,
+.Album .banner_section,
+.Listen .banner_section,
+.Press .banner_section,
+.Books .banner_section,
+.Lyrics .banner_section,
+.Gallery .banner_section{
+    background: url(pithu9.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-top: 20rem;
+    padding-bottom: 10rem;
+    min-height: auto;
+    
+}
+.header{
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    left: 0;
+    z-index: 2;
+}
+.header .navbar{
+   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 5rem;
+}
+
+.header .navbar-brand{
+    width: 7.5rem;
+    margin-top: -0.1rem;
+}
+
+.header .navbar-nav .nav-link{
+    color: brown;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    margin: 0 0.2rem;
+    font-family: var(--primary-font);
+}
+
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-link.active{
+    color: var(--secondary-color);
+}
+
+.header .navbar-toggler{
+    color: var(--text-white);
+    font-size: 2rem;
+    height: 2.7rem;
+    padding: 0;
+}
+.header .navbar-toggler:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.header .scrolled{
+    position: fixed;
+    top: -0.4rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    z-index: 999;
+    transform: 0.3s all ease-in-out;
+}
+
+
+.banner_section{
+    background: url(Murugadas.jpg);
+    background-repeat: no-repeat;
+    background-position:top center;
+    background-size: cover;
+    min-height: 80vh;
+}
+.banner_section .carousel-item{
+    padding: 3rem 0;
+    height: 90vh;
+}
+.banner_section .carousel-caption{
+    top: 30%;
+    bottom: 0;
+    left: 3%;
+    right: 0;
+    text-align: left;
+    width: 100%;
+}
+.banner_section .carousel-caption h3{
+    padding: 0.5rem 1.5rem;
+    background-color: goldenrod;
+    display: inline;
+}
+
+.about_section{
+    padding: 90px 8% 40px;
+display: flex;
+justify-content: space-between;
+}
+
+.about_section .about-img{
+    position: relative;
+    flex-basis: 30%;
+    height: 400px;
+    max-height: 450px;
+    background-color: aliceblue;
+}
+
+.about_section .about-text{
+    flex-basis: 65%;
+    margin-left: 3%;
+}
+
+.about_section .about-img::before{
+    position: absolute;
+    content: '';
+    width: calc(100% - 15px);
+    height: calc(115% - 15px);
+    outline: 3px solid var(--main-color);
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+}
+.about_section .about-img img{
+    position: relative;
+    width: 100%;
+    min-width: 280px;
+    
+    object-fit: cover;
+    z-index: 2;
+}
+
+.about_section .btn{
+    position: relative;
+    color: orange;
+    background: linear-gradient(to right #0f7404, #5cb917);
+    z-index: 1;
+    overflow: hidden;
+    border: 0.2rem solid orange;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.2rem;
+
+}
+.btn:hover{
+    background-color: orange;
+    color: white;
+}
+
+.gallery_section{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery_section .btn{
+    position: relative;
+    color: orange;
+    background: linear-gradient(to right #0f7404, #5cb917);
+    z-index: 1;
+    overflow: hidden;
+    border: 0.2rem solid orange;
+    border-radius: 4rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.2rem;
+    width: 180px;
+    
+}
+.btn:hover{
+    background-color: orange;
+    color: white;
+}
+
+
+.footer_section {
+    background-color: #f0f0f0; /* Add your desired background color */
+   }
+   
+.footer_section h5 {
+    text-align: center; /* Align h4 horizontally */
+    
+  }
+
+  
+.footer_section p{
+    text-align: center;
+    font-size: 13px;
+    color: brown;
+}
+
+.About .About_section{
+    width: 100%;
+    padding: 80px;
+}
+.About .About_section h1{
+    padding-bottom: 10px;
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+
+.About .About_section p{
+    font-size: 1.5rem;
+    text-align: justify;
+    color: #333;
+    text-indent: 5em;
+    
+}
+
+.About .About_section .pic{
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    float: left;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-right: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.Gurus .guru_section{
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.Gurus .guru_section h5{
+    font-style: italic;
+    font-weight: 600;
+}
+
+.Gurus .guru_section p{
+    font-size: 1.5rem;
+    text-indent: 5em;
+}
+
+.Gurus .guru_section .pic{
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    float: right;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-right: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.Gurus .guru_section .pic1{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    float: left;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-right: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.Gurus .guru_section .pic2{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    float: right;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-left: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.Gurus .guru_section .pic3{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    float: left;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-right: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.Devi .devi_section{
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.Devi .devi_section{
+    font-size: 1.5rem;
+    text-indent: 5em;
+}
+
+.Devi .devi_section .pic{
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    float: left;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-right: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.Devi .devi_section .pic1{
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    float: right;
+    shape-outside: circle(150px);
+    shape-margin: 50px;
+    margin-left: 50px;
+    filter: drop-shadow(7px 7px 7px #666666);
+}
+
+.award_section{
+    padding: 90px 8% 60px;
+display: flex;
+justify-content: space-between;
+}
+
+.award_section p{
+    text-indent: 5em;
+}
+
+.award_section .about-img{
+    position: relative;
+    flex-basis: 30%;
+    height: 400px;
+    max-height: 450px;
+}
+
+.award_section .bio-area{
+    flex-basis: 65%;
+    margin-left: 3%;
+}
+
+.award_section .about-img::before{
+    position: absolute;
+    content: '';
+    width: calc(100% - 15px);
+    height: calc(115% - 15px);
+    outline: 3px solid rgb(163, 162, 162);
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+}
+
+.award_section .about-img img{
+    position: relative;
+    width: 100%;
+    min-width: 280px;
+    
+    object-fit: cover;
+    z-index: 2;
+}
+
+.listen_section .container{
+    margin-top: 10px;
+}
+
+.listen_section .video-gallery{
+    position: relative;
+}
+
+.listen_section .video-gallery a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.listen_section .video-gallery:hover a{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.album_section h1{
+    padding-left: 20px;
+}
+
+.album_section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.album_section .column-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+}
+
+.album_section .column {
+    background-color: #fceab2;
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+}
+
+.album_section li {
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    line-height: 2px;
+}
+
+.photo_section .image-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.photo_section .image-container img {
+    
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid black;
+}
+
+.press_section{
+    padding-left: 70px;
+}
+
+.press_section h2{
+    font-size: 3rem;
+}
+
+.press_section .red-link{
+    font-size: 2rem;
+}
+
+.press_section .red-link a{
+    color: brown;
+}
+
+.books_section {
+    padding-left: 50px;
+}
+
+.books_section p{
+    font-size: 1.8rem;
+}
+
+.books_section ul {
+    list-style-type: none;
+ }
+
+.books_section li{
+    font-size: 2rem;
+    padding-left: 80px;
+}
+
+.books_section li::before {
+    content: "\2022"; /* the bullet symbol */
+    color: #030405; /* bullet color */
+    font-weight: bold; /* if you want it to be bold */
+    display: inline-block; /* required */
+    width: 1em; /* width of the bullet symbol */
+    margin-left: -1em; /* remove indentation */
+ }
+
+ .lyrics_section {
+    padding-left: 80px;
+ }
+
+ .lyrics_section h1{
+    padding-bottom: 10px;
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+
+.lyrics_section p{
+    font-size: 1.5rem;
+    text-align: justify;
+    color: #333;
+    text-indent: 5em;
+    padding-right:50px;
+    
+}
+
+.lyrics_section .pic{
+    height: 200px;
+    width: 250px;
+    float: left;
+    margin-right: 50px;
+    
+    
+}
+
+.hint_section .row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.hint_section .column{
+    float: left;
+    flex: 1;
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.hint_section li{
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.word_section .dashed-line {
+    width: 100%;
+    height: 1px;
+    background-image: repeating-linear-gradient(
+       to right,
+       black,
+       black 3px,
+       transparent 3px,
+       transparent 6px
+    );
+   }
+
+.word_section .word {
+    padding-left: 50px;
+}
+
+.word_section p{
+    font-size:1.5rem ;
+}
+
+.pic_section .modal {
+    
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.pic_section .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.pic_section .col-3 img, .img-thumbnail {
+    width: 100%; /* Adjust the width to your desired size */
+    height: 250px; /* Adjust the height to maintain the aspect ratio */
+   }
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.pic_section .close {
+    position: absolute;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.pic_section .close:hover,
+.close:focus {
+        color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pic_section .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.pic_section .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.pic_section .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
