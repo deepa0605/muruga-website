@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragas</title>
+</head>
+<body>
+    <h2>Ragas</h2>
+    <ul id="ragasList">
+    
+    </ul>
+
+    <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZIrMJU_m8Q3n5JHLeI3xULp4VxqEJ1xs",
+            authDomain: "ragadetail.firebaseapp.com",
+            projectId: "ragadetail",
+            storageBucket: "ragadetail.appspot.com",
+            messagingSenderId: "141414370618",
+            appId: "1:141414370618:web:a280d2051a4296c3599403",
+            measurementId: "G-FEDP4G9JR5"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const firestore = getFirestore(app);
+
+        const ragasList = document.getElementById('ragasList');
+
+        const getRagas = async () => {
+            const querySnapshot = await getDocs(collection(firestore, 'ragas'));
+            const ragas = [];
+            querySnapshot.forEach((doc) => {
+            ragas.push(doc.data().name);
+            });
+            
+            ragas.sort();
+            
+            ragas.forEach((ragaName) => {
+                const li = document.createElement('li');
+                li.textContent = ragaName;
+                li.addEventListener('click', () => {
+                    window.location.href = `raga_details.html?raga=${encodeURIComponent(ragaName)}`;
+                });
+                ragasList.appendChild(li);
+            });
+        };
+
+        getRagas();
+
+    </script>
+</body>
+</html>

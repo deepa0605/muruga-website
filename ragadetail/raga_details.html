@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raga Details</title>
+</head>
+<body>
+    
+    <div id="ragaDetails">
+    
+    </div>
+
+    <script type="module">
+        // Initialize Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZIrMJU_m8Q3n5JHLeI3xULp4VxqEJ1xs",
+            authDomain: "ragadetail.firebaseapp.com",
+            projectId: "ragadetail",
+            storageBucket: "ragadetail.appspot.com",
+            messagingSenderId: "141414370618",
+            appId: "1:141414370618:web:a280d2051a4296c3599403",
+            measurementId: "G-FEDP4G9JR5"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const firestore = getFirestore(app);
+
+        
+        const getRagaDetails = async (ragaName) => {
+            const q = query(collection(firestore, "ragas"), where("name", "==", ragaName));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                
+                const arohanam = doc.data().arohanam;
+                const avrohanam = doc.data().avrohanam;
+                document.getElementById('ragaDetails').innerHTML = `
+                   <h1>${ragaName}</h1>
+                    <p><strong>Arohanam:</strong> ${arohanam}</p>
+                    <p><strong>Avrohanam:</strong> ${avrohanam}</p>
+                `;
+            });
+            document.title = `Raga ${ragaName} Details`;
+
+            const encodedRagaName = encodeURIComponent(ragaName.replace(/\s+/g, '_'));
+            history.replaceState(null, '', `raga_${encodedRagaName}_details.html`);
+        };
+
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const ragaName =  urlParams.get('raga');
+
+        
+        getRagaDetails(ragaName);
+
+    </script>
+</body>
+</html>
