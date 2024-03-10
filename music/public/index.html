@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <h2>Ragas</h2>
+    <ul id="songsList">
+    
+    </ul>
+
+    <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyDb4s_jVG8uBrf2mo88GnvANIG9SL47aK4",
+            authDomain: "music-f1f87.firebaseapp.com",
+            projectId: "music-f1f87",
+            storageBucket: "music-f1f87.appspot.com",
+            messagingSenderId: "514140274998",
+            appId: "1:514140274998:web:8b274ee299b57ef6d7b397",
+            measurementId: "G-DN51YZCCR7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const firestore = getFirestore(app);
+
+        const songsList = document.getElementById('songsList');
+
+        const getSongs = async () => {
+            const querySnapshot = await getDocs(collection(firestore, 'songs'));
+            const songs = [];
+            querySnapshot.forEach((doc) => {
+            songs.push(doc.data().name);
+            });
+            
+            songs.sort();
+            
+            songs.forEach((songName) => {
+                const li = document.createElement('li');
+                li.textContent = songName;
+                li.style.cursor = "pointer";
+                li.addEventListener('click', () => {
+                    window.location.href = `song_details.html?song=${encodeURIComponent(songName)}`;
+                });
+                songsList.appendChild(li);
+            });
+        };
+
+        getSongs();
+
+    </script>
+</body>
+</html>
